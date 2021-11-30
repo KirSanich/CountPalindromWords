@@ -21,18 +21,18 @@ public class Main {
 
     static class Pair {
         private final long countPalin;
-        private final long nonPalin;
+        private final long countNonPalin;
 
 
         public Pair(Long countPalin, Long nonPalin) {
             this.countPalin = countPalin;
-            this.nonPalin = nonPalin;
+            this.countNonPalin = nonPalin;
         }
 
         public String Info() {
             return "Палиндромов:" +
                     countPalin +
-                    " Не палиндромов:" + nonPalin;
+                    " Не палиндромов:" + countNonPalin;
         }
     }
 
