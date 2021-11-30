@@ -35,10 +35,9 @@ public class Main {
     }
 
     public static Pair TaskPalindrom(String longString) {
-        Pair pair = Stream.of(longString).flatMap(word -> Stream.of(word.split(" "))).
+        return Stream.of(longString).flatMap(word -> Stream.of(word.split(" "))).
                 collect(Collectors.teeing(Collectors.filtering(Main::isPalin, Collectors.counting()), Collectors.filtering(word -> !isPalin(word),
                         Collectors.counting()), Pair::new));
-        return pair;
     }
 
     public static boolean isPalin(@NotNull String word) {
