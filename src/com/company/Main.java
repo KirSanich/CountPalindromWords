@@ -38,17 +38,7 @@ public class Main {
 
 
     public static boolean isPalin(@NotNull String word) {
-        char[] original = word.toCharArray();
-        char[] reversed = new char[original.length];
-        int j = 0;
-        for (int i = original.length - 1; i >= 0; i--) {
-            if (j < original.length) {
-                reversed[j] = original[i];
-                j++;
-            }
-        }
-        String reverse = String.copyValueOf(reversed);
-        return reverse.toLowerCase(Locale.ROOT).equals(word.toLowerCase(Locale.ROOT));
+        return word.toLowerCase(Locale.ROOT).equals(new StringBuilder(word).reverse().toString().toLowerCase(Locale.ROOT));
 
     }
 
